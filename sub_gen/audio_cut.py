@@ -1,7 +1,7 @@
 from pydub import AudioSegment
 
 
-def cut_by_minutes(input_file_path, output_file_path_base, sec_interval):
+def cut_by_seconds(input_file_path, output_file_path_base, sec_interval):
     audio = AudioSegment.from_wav(input_file_path)
     # AudioSegments are slicable using milliseconds. for example:
     # a = AudioSegment.from_mp3(mp3file)

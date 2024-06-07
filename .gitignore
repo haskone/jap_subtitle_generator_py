@@ -4,3 +4,5 @@
 /data
 /old
 __pycache__
+*.code-workspace
+.vscode
