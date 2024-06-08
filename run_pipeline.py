@@ -4,11 +4,17 @@ import time
 from sub_gen.create_audio_file_reduced import extract_audio
 from sub_gen.translation_model import translate_one
 from sub_gen.whisper_model import transcribe
+from dotenv import load_dotenv
+
+load_dotenv()
+# Assuming you have a .env file in the same directory as this script
+# and filename in "data" dir of the project
+FILENAME = os.getenv("VIDEO_FILENAME")
 
 DEFAULT_SHOWING_TIME = 5
 basedir = os.path.dirname(os.path.abspath(__file__))
 datadir = os.path.join(basedir, "data")
-filename = os.path.join(datadir, "video_with_audio.mp4")
+filename = os.path.join(datadir, FILENAME)
 
 audio_file_raw_path = os.path.join(datadir, f"{filename}_audio_raw.wav")
 audio_file_reduced_path = os.path.join(datadir, f"{filename}_audio_reduced.wav")
